@@ -4,7 +4,7 @@ RUN apt-get update && \
     apt install telnet curl -y 
 
 RUN apt-get update && \ 
-	apt-get install -y python3 libc6 libcurl4 libpython3.7  && \
+	apt-get install -y python3 libc6 libcurl4 libpython3*  && \
 	apt-get --fix-broken install && \
 	rm -rf /var/lib/apt/lists/*
 
