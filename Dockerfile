@@ -14,6 +14,7 @@ COPY libcurl4_7.68.0-1_amd64.deb /tmp
 COPY libpython3.7_3.7.7-1+b1_amd64.deb /tmp
 
 RUN dpkg -i /tmp/libc6_2.30-0ubuntu2.1_amd64.deb && \
+    apt-get install -f	
     dpkg -i /tmp/libcurl4_7.68.0-1_amd64.deb && \
     dpkg -i /tmp/libc6_2.30-0ubuntu2.1_amd64.deb && \
 	dpkg -i /tmp/mysql-shell_8.0.19-1debian10_amd64.deb && \
