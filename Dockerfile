@@ -6,7 +6,10 @@ RUN apt-get update && \
 RUN apt-get update && \ 
 	apt-get install -y python3 libc6 && \
 	apt-get --fix-broken install && \
-	rm -rf /var/lib/apt/lists/*
+	rm -rf /var/lib/apt/lists/* && \
+    	apt-get clean && \
+    	apt-get -y purge && \	
+	apt-get autoremove -y
 
 COPY mysql-shell_8.0.19-1debian10_amd64.deb /tmp 	
 COPY libc6_2.30-0ubuntu2.1_amd64.deb /tmp
